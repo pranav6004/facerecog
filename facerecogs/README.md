@@ -50,3 +50,32 @@ Add clear, front-facing photos of individuals you want to recognize to this fold
 Name each image file with the person's name (e.g., john_doe.jpg).
 
 Ensure that the images are of good quality and well-lit for optimal recognition performance.
+
+Set up Google Cloud Project:
+- Go to the [Google Cloud Console](https://console.cloud.google.com/)
+- Create a new project
+- Enable the Google Drive API and Google Sheets API for your project
+
+ Create Service Account Credentials:
+- In the Google Cloud Console, go to "APIs & Services" > "Credentials"
+- Click "Create Credentials" > "Service Account"
+- Fill in the details and create the account
+- Once created, go to the service account details
+- Under "Keys", add a new key and select JSON
+- Download the JSON file and rename it to `credentials.json`
+- Place `credentials.json` in the project root directory
+
+ Set up Google Sheet:
+- Create a new Google Sheet
+- Share the sheet with the email address in your `credentials.json` (client_email)
+- Copy the Sheet ID from the URL (it's the long string in the middle of the URL)
+
+ Update the code:
+- Open `main.py`
+- Replace `'YOUR_SHEET_ID_HERE'` with your actual Google Sheet ID
+
+ Prepare face images:
+- Create an `image` folder in the project directory
+- Add clear, front-facing photos of individuals to recognize
+- Name each image file with the person's name (e.g., `john_doe.jpg`)
+
